@@ -6,7 +6,7 @@
         <hr/>
 
         <div class="formulario ">
-          <form [formGroup]="formulario">
+          <form [formGroup]="formulario" (ngSubmit)="Converter()">
             <div class="form-group">
             <input type="number" class="form-control form-control-sm" placeholder="valor" formControlName="valor">
             </div>
@@ -19,7 +19,11 @@
         </div>
       </div>
     </div>
+    <div class="col-6" ngIf="visibilidadeValorConvertido">
+      <h6>Valor Convertido</h6>
+      <hr/>
+      <h1 class="text-primery">{{valorConvertido}}</h1>
+    </div>
   </div>
-</div>
 
 <router-outlet></router-outlet>
